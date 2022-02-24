@@ -36,7 +36,7 @@ class AnimalController extends Controller
      */
     public function store(Request $request)	//新增資源(因為POST請求對應到的是Store方法)
     {
-        $animal = Animal::create($request->all());		//all=已陣列的方式取得所有輸入的資料,這邊的create是Model的create方式
+    $animal = Animal::create($request->all());		//all=已陣列的方式取得所有輸入的資料,這邊的create是Model的create方式
 	$animal = $animal->refresh();				//再一次查尋資料庫回傳完整的欄位資料
 	return response($animal, Response::HTTP_CREATED);	//第一個參數是變數animal(實體物件資料)包含在HTTP協定的內容中第二個參數是狀態碼
     }
