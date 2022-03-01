@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\animal;
+use App\Models\animal;                                  //引入對應的模型文件
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -81,8 +81,9 @@ class AnimalController extends Controller
      * @param  \App\Models\animal  $animal
      * @return \Illuminate\Http\Response
      */
-    public function destroy(animal $animal)		//刪除
+    public function destroy(animal $animal)		            //刪除
     {
-        //
+        $animal->delete();                                  //使用Model的delete方法來刪除
+        return response(null, Response::HTTP_NO_CONTENT);   //代碼204(沒有內容)
     }
 }
