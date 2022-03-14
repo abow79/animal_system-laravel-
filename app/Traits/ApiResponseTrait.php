@@ -1,6 +1,6 @@
 <?php
 namespace App\Traits;   //路徑
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Response;  //這邊不是使用全域類別而是使用Symfony的Response類別,Laravel 使用了許多 Symfony 的元件
 
 trait ApiResponseTrait{
     /*
