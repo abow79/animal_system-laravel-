@@ -70,9 +70,10 @@ class AnimalController extends Controller
      * @param  \App\Models\animal  $animal
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, animal $animal)
+    public function update(Request $request, Animal $animal)    //這邊的request使用者輸入的表單資料，＄animal則是要修改的動物資料
     {
-        //
+          $animal->update($request->all());                     //更新資源的方法,all方法以陣列的方式取得資料
+          return response($animal,Response::HTTP_OK);          //回傳動物資料,並給予200HTTP狀態碼（ok） 
     }
 
     /**
