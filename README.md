@@ -9,10 +9,12 @@
 
 ## 動物資料管理系統
 
-這是我用php+laravel正在製作的side project '動物資料管理系統'
+這是我用php+laravel框架以MVC架構製作的side project '動物資料管理系統'
+
 
 目前新增,刪除,修改的功能已完成
 
 異常處理方面寫在 app\Exceptions\Handler.php當中
 
 後面會再陸續增加新的功能～
+
