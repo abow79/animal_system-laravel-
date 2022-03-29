@@ -13,9 +13,9 @@ class Animal2 extends Migration
      */
     public function up()
     {
-        Schema::create('animal2', function (Blueprint $table) {		//第一個參數'animals'是資料表名稱,第二個參數是匿名的函數內容中撰寫要怎樣建立這資料表的欄位
+        Schema::create('animal2', function (Blueprint $table) {		//第一個參數'animal2'是資料表名稱,創了一個新的migrate file來指定animal2的table structure
             $table->id();
-            $table->string('type')->nullable;
+            $table->string('type')->nullable;                       //有別於animals,這邊是用type而非type_id
             $table->string('name');
             $table->date('birthday')->nullable;
             $table->string('area')->nullable; 
