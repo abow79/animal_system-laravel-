@@ -34,10 +34,10 @@ class AnimalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)	//新增資源(因為POST請求對應到的是Store方法)
+    public function store(Request $request)	            //新增資源(因為POST請求對應到的是Store方法)
     {
-    $animal = Animal::create($request->all());		//all=已陣列的方式取得所有輸入的資料,這邊的create是Model的create方式
-	$animal = $animal->refresh();				//再一次查尋資料庫回傳完整的欄位資料
+    $animal = Animal::create($request->all());		    //all=已陣列的方式取得所有輸入的資料,這邊的create是Model的create方式
+	$animal = $animal->refresh();				        //再一次查尋資料庫回傳完整的欄位資料
 	return response($animal, Response::HTTP_CREATED);	//第一個參數是變數animal(實體物件資料)包含在HTTP協定的內容中第二個參數是狀態碼
     }
 
@@ -73,7 +73,7 @@ class AnimalController extends Controller
     public function update(Request $request, Animal $animal)    //這邊的request使用者輸入的表單資料，＄animal則是要修改的動物資料
     {
           $animal->update($request->all());                     //更新資源的方法,all方法以陣列的方式取得資料
-          return response($animal,Response::HTTP_OK);          //回傳動物資料,並給予200HTTP狀態碼（ok） 
+          return response($animal,Response::HTTP_OK);           //回傳動物資料,並給予200HTTP狀態碼（ok） 
     }
 
     /**
@@ -82,9 +82,9 @@ class AnimalController extends Controller
      * @param  \App\Models\animal  $animal
      * @return \Illuminate\Http\Response
      */
-    public function destroy(animal $animal)		            //刪除
+    public function destroy(animal $animal)		                //刪除
     {
-        $animal->delete();                                  //使用Model的delete方法來刪除
-        return response(null, Response::HTTP_NO_CONTENT);   //代碼204(沒有內容)
+        $animal->delete();                                      //使用Model的delete方法來刪除
+        return response(null, Response::HTTP_NO_CONTENT);       //代碼204(沒有內容)
     }
 }
