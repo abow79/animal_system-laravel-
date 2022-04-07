@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::apiResource('animals', AnimalController::class); //這邊是回傳整個class的名稱(包含路徑)
+Route::apiResource('animals', AnimalController::class);         //這邊是回傳整個class的名稱(包含路徑),也就是對應到AnimalController檔案內相對應的方法
